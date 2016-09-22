@@ -240,6 +240,34 @@
 	bottom: 3vw;
 }
 
+a{
+	font-size: 35px;
+	margin: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: rgb(50,50,50);
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(50,50,50);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(50,50,50);
+}
+
+a:active {
+    text-decoration: none;
+    color: rgb(50,50,50);
+}
+
+span{
+	margin:6px;
+}
 
 
 /* QUERIES */
