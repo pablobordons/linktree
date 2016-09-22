@@ -1,6 +1,20 @@
-// particles
-
-// basic
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////      
+//////////////////////////
+/////////////////////////			Portfolio
+///////
+//////
+/////     	 Pablo Bordons Estrada
+////			  05/04/2016
+///
+//
+/////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 
 var canvas 		= 	document.getElementById("canvas");
 var context		=	canvas.getContext("2d");
@@ -24,7 +38,7 @@ window.requestAnimFrame = (function(callback) {
 	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
     
 	function(callback) {
-   	  	window.setTimeout(callback, 1000 / 60);
+   	  	window.setTimeout(callback, 1000 / 40);
    		};
 
 	})();
@@ -106,6 +120,7 @@ window.requestAnimFrame = (function(callback) {
 			context.beginPath();
 			context.arc(this.x,this.y,this.radius,0,2*Math.PI);
 			//context.fill();
+			context.lineWidth = 1.2;
 			context.stroke();
 
 			};
@@ -143,18 +158,18 @@ window.requestAnimFrame = (function(callback) {
 
 		var circles 	= [];
 
-		var	circlesNum 	= 80;
+		var	circlesNum 	= 50;
 
 		for (var i = 0; i < circlesNum ; i++){
 
-			circles[i] = new Circle(	randNum(50,canvas.width - 50),        //  x position
-										randNum(50,canvas.height - 50),		//  y position
- 										randNum(2,150),			//  radius
-										"silver",//"#ADECFF",				//  color
-										randNum(-1,1),		//  velocity x
-										randNum(-1,1),		//  velocity y
-										0,						//	acceleration x
-										0,						//	acceleration y
+			circles[i] = new Circle(	randNum(50, canvas.width - 50),     //  x position
+										randNum(50, canvas.height - 50),	//  y position
+ 										randNum(2,150),						//  radius
+										"silver",							//  color
+										randNum(-1,1),						//  velocity x
+										randNum(-1,1),						//  velocity y
+										0,									//	acceleration x
+										0,									//	acceleration y
 										1
 									)    
 	
@@ -214,9 +229,8 @@ window.requestAnimFrame = (function(callback) {
 	function logicLoop(){
 
 		update();
-		setTimeout(logicLoop,1000/60);
+		setTimeout(logicLoop, 1000/60);
 	}
 
 	logicLoop();
 	graphicLoop();
-
